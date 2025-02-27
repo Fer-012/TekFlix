@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Film, FILMS } from '../models/film';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  films : Film[] = FILMS;
+  constructor(private router: Router) {}
+
+  goToMovieList() {
+    this.router.navigate(['/movie-list']);
+  }
+
 
 }

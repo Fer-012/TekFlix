@@ -1,0 +1,22 @@
+*{
+    background-color: black;
+    color: white;
+}
+.rating {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: gold;
+}
+.movie-img {
+    width: 100%;  
+    height: 400px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+
+
+
+
+

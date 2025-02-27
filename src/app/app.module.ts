@@ -10,6 +10,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { SearchComponent } from './search/search.component';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { SingleMovieComponent } from './single-movie/single-movie.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { SearchComponent } from './search/search.component';
     MovieListComponent,
     MovieDetailComponent,
     FavoritesComponent,
-    SearchComponent
+    SearchComponent,
+    NotFoundComponentComponent,
+    SingleMovieComponent,
+   
   ],
   imports: [
     BrowserModule,

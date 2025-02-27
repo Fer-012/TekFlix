@@ -1,0 +1,9 @@
+
+<div class="card movie-card shadow-lg">
+    <img [src]="film.image" class="card-img-top movie-img" alt="Movie Image">
+    <div class="card-body text-center">
+        <h5 class="card-title">{{ film.title }}</h5>
+        <p class="card-text">{{ film.genre }} - {{ film.year }}</p>
+        <p class="rating">⭐ {{ film.rating }}</p>
+    </div>
+</div>
