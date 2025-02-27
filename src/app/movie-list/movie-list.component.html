@@ -24,7 +24,7 @@
             <div class="carousel-item active">
                 <div class="row mx-auto" style="max-width: 1200px;">
                     <div class="col-sm-6 col-md-3" *ngFor="let film of films">
-                        <app-single-movie [film]="film"></app-single-movie>
+                      <app-single-movie [film]="film" [routerLink]="['/movie-details', film.id]"></app-single-movie>
                     </div> 
                 </div>
             </div>

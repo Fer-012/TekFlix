@@ -3,11 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 const routes: Routes = [
-  {path : '',component : HomeComponent},
+  {path : '',redirectTo : 'home',pathMatch : 'full'},
+  {path : 'home',component : HomeComponent},
   {path : 'movie-list',component : MovieListComponent},
-  {path : '**',component: NotFoundComponentComponent}
+  {path : 'movie-details/:id',component: MovieDetailComponent},
+  {path : '**',component: NotFoundComponentComponent},
 ];
 
 @NgModule({
