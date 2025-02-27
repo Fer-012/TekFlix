@@ -1,1 +1,22 @@
-<p>movie-detail works!</p>
+<div style="margin-top: 80px; background-color: #000;">
+    <div class="text-center">
+        <h1 class="text-white">Details Movie</h1>
+        <div *ngIf="film" class="movie-container">
+            <img [src]="film.image" alt="{{ film.title }}" class="movie-image">
+        
+            <div class="movie-details">
+            <h2>{{ film.title }}</h2>
+            <p><strong>Description:</strong> {{ film.description }}</p>
+            <p><strong>Genre:</strong> {{ film.genre }}</p>
+            <p><strong>Release Year:</strong> {{ film.year }}</p>
+            <a routerLink="/" class="back-link">Back to Movies</a>
+            </div>
+        </div>
+        
+        <div *ngIf="!film" class="movie-container">
+            <p>Movie not found.</p>
+            <a routerLink="/" class="back-link">Back to Movies</a>
+        </div>
+    </div>
+</div>
+  
