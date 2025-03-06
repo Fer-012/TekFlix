@@ -1,0 +1,25 @@
+<div style="background-color: #000;"> 
+    <div class="text-center">
+        <h2>Ma Wishlist 🎥</h2>
+        <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div *ngIf="wishlist.length > 0; else emptyMessage" class="row mx-auto" style="max-width: 1200px;">
+                        <div class="col-md-4" *ngFor="let film of wishlist; let i = index">
+                            <div class="card">                                
+                                <img [src]="film.image" class="card-img-top" alt="Movie Image">
+                                <div class="card-body">
+                                    <h5 class="card-title text-white">{{film.title}}</h5>
+                                    <p class="card-text">⭐ {{ film.rating }}</p>
+                                    <button class="btn btn-outline-light" (click)="removeFromWishlist(i)">Supprimer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+            <ng-template #emptyMessage>
+                <p class="text-white mt-3">Aucun film dans votre wishlist 😢</p>
+            </ng-template>
+        </div>
+</div>

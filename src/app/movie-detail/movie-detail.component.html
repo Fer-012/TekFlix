@@ -1,22 +1,33 @@
-<div style="margin-top: 80px; background-color: #000;">
-    <div class="text-center">
-        <h1 class="text-white">Details Movie</h1>
-        <div *ngIf="film" class="movie-container">
-            <img [src]="film.image" alt="{{ film.title }}" class="movie-image">
-        
-            <div class="movie-details">
-            <h2>{{ film.title }}</h2>
-            <p><strong>Description:</strong> {{ film.description }}</p>
-            <p><strong>Genre:</strong> {{ film.genre }}</p>
-            <p><strong>Release Year:</strong> {{ film.year }}</p>
-            <a routerLink="/" class="back-link">Back to Movies</a>
-            </div>
-        </div>
-        
-        <div *ngIf="!film" class="movie-container">
-            <p>Movie not found.</p>
-            <a routerLink="/" class="back-link">Back to Movies</a>
-        </div>
+<div class="movie-detail-container" *ngIf="film">
+  <div class="movie-content">
+    <div class="movie-poster">
+      <img [src]="film.image" [alt]="film.title">
     </div>
+    <div class="movie-info">
+      <h1>{{film.title}}</h1>
+      <div class="movie-metadata">
+        <span class="year">{{film.year}}</span>
+        <span class="genre">{{film.genre}}</span>
+        <span class="rating">★ {{film.rating}}</span>
+      </div>
+      <div class="description">
+        <h3>Overview</h3>
+        <p>{{film.description}}</p>
+      </div>
+      <div class="actions">
+        <button class="btn-watch">Watch Now</button>
+        <button class="btn-trailer" (click)="openModal()">Watch Trailer</button>
+      </div>
+    </div>
+  </div>
 </div>
-  
+
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <iframe *ngIf="safeTrailerUrl" width="910" height="490" [src]="safeTrailerUrl" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+  </div>
+</div>
